@@ -37,7 +37,7 @@ class PortraitConversion:
                 portrait_current_height = self.rpg_height
                 portrait_current_width = 0
             portrait = Image.open(self.in_directory + '/' + picture)
-            portrait = portrait.resize((144,144), 0)
+            portrait = portrait.resize((self.rpg_height, self.rpg_width), 0)
             portrait_paste = (portrait_current_width, portrait_current_height, portrait_current_width + self.rpg_height, portrait_current_height + self.rpg_height)
             self.sprite.paste(portrait, portrait_paste)
             portrait_current_width = portrait_current_width + self.rpg_width
