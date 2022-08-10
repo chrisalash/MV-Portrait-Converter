@@ -24,7 +24,7 @@ class PortraitConversion:
         portrait_current_height = 0
         portrait_current_width = 0
         count = 0
-        count2 = 0
+        count2 = 1
         for picture in pictures:
             if(count == 8):
                 self.sprite.save(self.out_directory + '/' + name + str(count2) + '.png')
@@ -42,6 +42,8 @@ class PortraitConversion:
             self.sprite.paste(portrait, portrait_paste)
             portrait_current_width = portrait_current_width + self.rpg_width
             count = count + 1
+        if(count != 9):
+            self.sprite.save(self.out_directory + '/' + name + str(count2) + '.png')
         print("Ok Done")
             
 
